@@ -15,14 +15,14 @@ ingress_details:
 
 # Metrics
 main_deployment_metrics:
-  http_requests_total: #TODO: Enter the value from main deployment's /metrics endpoint
-  process_cpu_seconds_total: #TODO: Enter the CPU seconds from main deployment
-  process_resident_memory_bytes: #TODO: Enter the memory usage from main deployment
+  http_requests_total: http_requests_total{version="v1"} 11.0
+  process_cpu_seconds_total: process_cpu_seconds_total 0.5800000000000001
+  process_resident_memory_bytes: process_resident_memory_bytes 3.2456704e+07
 
 canary_deployment_metrics:
-  http_requests_total: #TODO: Enter the value from canary deployment's /metrics endpoint
-  process_cpu_seconds_total: #TODO: Enter the CPU seconds from canary deployment
-  process_resident_memory_bytes: #TODO: Enter the memory usage from canary deployment
+  http_requests_total: http_requests_total{version="v2"} 8.0
+  process_cpu_seconds_total: process_cpu_seconds_total 0.61
+  process_resident_memory_bytes: process_resident_memory_bytes 3.2571392e+07
 
 # Traffic Distribution Test
 traffic_test_results:
