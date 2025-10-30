@@ -26,7 +26,7 @@ canary_deployment_metrics:
 
 # Traffic Distribution Test
 traffic_test_results:
-  total_requests_sent: #TODO: Enter how many test requests you sent (should be 20)
+  total_requests_sent: 0, something is wrong here
   main_responses_received: #TODO: Enter how many responses were from main deployment
   canary_responses_received: #TODO: Enter how many responses were from canary deployment
   actual_canary_percentage: #TODO: Calculate the actual percentage of canary traffic
@@ -38,14 +38,14 @@ prometheus_metrics:
 
 # Rollback Test
 rollback_test:
-  previous_revision: #TODO: Enter the revision number before rollback
-  rollback_command_used: #TODO: Enter the helm rollback command you used
-  time_to_rollback_seconds: #TODO: Enter how long the rollback took to complete
+  previous_revision: 2
+  rollback_command_used: helm rollback canary-demo 1 -n canary-demo
+  time_to_rollback_seconds: didnt mention, but instant
 
 # Error Budget Calculation (based on 99.9% SLO)
 error_budget:
-  monthly_error_budget_seconds: #TODO: Calculate and enter the monthly error budget in seconds
-  remaining_error_budget_percentage: #TODO: Enter current remaining error budget percentage
+  monthly_error_budget_seconds: 2592.00
+  remaining_error_budget_percentage: 100%
 
 # Additional Observations
 observations:
